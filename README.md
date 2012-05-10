@@ -6,6 +6,10 @@ The goal of this project is to develop a comprehensive, well documented and unit
 
 ### Dependencies
 
+* [Handlerbars.js](http://handlebarsjs.com) [v1.0 Beta 6](https://github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js)
+* [Underscore.js](http://underscorejs.org/) [1.33](https://github.com/documentcloud/underscore/blob/599d31101b7a7b896ff73e338d26ae698833f878/underscore.js)
+
+
 ## Usage & Examples
 
 Check out the _*.spec.js_ files under the _/test/specs/_ folder to see different use cases and examples. For more in-depth explanation of the module's methods [RTFM](http://en.wikipedia.org/wiki/RTFM) (see Documentation section below :P).
