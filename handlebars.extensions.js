@@ -23,7 +23,7 @@ define(['underscore.module', 'handlebars'], function (_) {
         var ifFalse = isBlockHelper(options) ? options.inverse(this) : (_.include(hashKeys, "ifFalse") ? hash.ifFalse : "");
         var ifTrue = isBlockHelper(options) ? options.fn(this) : (_.include(hashKeys, "ifTrue") ? hash.ifTrue : "");
 
-        output = func.call() ? ifTrue : ifFalse;
+        output = func.call(this) ? ifTrue : ifFalse;
 
         return output;
     }
@@ -96,7 +96,7 @@ define(['underscore.module', 'handlebars'], function (_) {
      * @returns {String|Function}
      */
     module.registerHelper("eq", function (context, compareObject, options) {
-        return genericDualHelper(options, function () {
+        return genericDualHelper.call(this,options, function () {
             return (context == compareObject); // TODO: Add object, array, date comparisons...
         });
     });
@@ -153,7 +153,7 @@ define(['underscore.module', 'handlebars'], function (_) {
      * @returns {String|Function}
      */
     module.registerHelper("has", function (context, propertyName, options) {
-        return genericDualHelper(options, function () {
+        return genericDualHelper.call(this, options, function () {
             var output = false;
             if (_.isObject(context)) {
                 if (_.isArray(context)) {
@@ -224,7 +224,7 @@ define(['underscore.module', 'handlebars'], function (_) {
      * @returns {String|Function}
      */
     module.registerHelper("gt", function (context, compareObject, options) {
-        return genericDualHelper(options, function () {
+        return genericDualHelper.call(this, options, function () {
             var output = false;
 
             if (_.isString(context) || _.isArray(context)) {
@@ -281,7 +281,7 @@ define(['underscore.module', 'handlebars'], function (_) {
      * @returns {String|Function}
      */
     module.registerHelper("gte", function (context, compareObject, options) {
-        return genericDualHelper(options, function () {
+        return genericDualHelper.call(this, options, function () {
             var output = false;
 
             if (_.isString(context) || _.isArray(context)) {
@@ -338,7 +338,7 @@ define(['underscore.module', 'handlebars'], function (_) {
      * @returns {String|Function}
      */
     module.registerHelper("lt", function (context, compareObject, options) {
-        return genericDualHelper(options, function () {
+        return genericDualHelper.call(this, options, function () {
             var output = false;
 
             if (_.isString(context) || _.isArray(context)) {
@@ -395,7 +395,7 @@ define(['underscore.module', 'handlebars'], function (_) {
      * @returns {String|Function}
      */
     module.registerHelper("lte", function (context, compareObject, options) {
-        return genericDualHelper(options, function () {
+        return genericDualHelper.call(this, options, function () {
             var output = false;
 
             if (_.isString(context) || _.isArray(context)) {
