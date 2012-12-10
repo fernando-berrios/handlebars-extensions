@@ -28,21 +28,16 @@ define([
 
         expect(_template(_context)).toEqual('<span>'+_expected+'</span>');
     };
+
     ////// TESTS ///////
     describe("Handlebars extensions module", function () {
+        var source, template;
 
         // toString
         describe("toString helper", function () {
-            var source, template;
-            var options = {
-              helperName: 'eq',
-              test: 'i am a banana!',
-              testValue: 'i am a banana!'
-            };
             beforeEach(function () {
                 source = '<span>{{toString test}}</span>';
                 template = Handlebars.compile(source);
-
             });
 
             it("expect a null property to be an empty string", function () {
@@ -173,7 +168,6 @@ define([
         });
 
         describe("eq block helper with else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#eq test "i am a banana!"}}Yay!{{else}}Boo!{{/eq}}</span>';
                 template = Handlebars.compile(source);
@@ -203,7 +197,6 @@ define([
         });
 
         describe("eq block helper without else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#eq test "i am a banana!"}}Yay!{{/eq}}</span>';
                 template = Handlebars.compile(source);
@@ -229,7 +222,6 @@ define([
 
         // has
         describe("has inline helper", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{has target "test"}}</span>';
                 template = Handlebars.compile(source);
@@ -249,7 +241,6 @@ define([
         });
 
         describe("has inline helper with optional arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{has target "test" ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -269,7 +260,6 @@ define([
         });
 
         describe("has block helper with else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#has target "test"}}Yay!{{else}}Boo!{{/has}}</span>';
                 template = Handlebars.compile(source);
@@ -301,7 +291,6 @@ define([
         });
 
         describe("has block helper without else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#has target "test"}}Yay!{{/has}}</span>';
                 template = Handlebars.compile(source);
@@ -320,10 +309,8 @@ define([
             });
         });
 
-        /// gt ///
-        // inline
+        // gt
         describe("gt inline helper", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{gt target "10"}}</span>';
                 template = Handlebars.compile(source);
@@ -342,9 +329,7 @@ define([
             });
         });
 
-        // inline
         describe("gt inline helper with incorrect arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{gt target "bobby" ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -364,7 +349,6 @@ define([
         });
 
         describe("gt inline helper with optional arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{gt target 10 ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -393,7 +377,6 @@ define([
         });
 
         describe("gt block helper with else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#gt target "10"}}Yay!{{else}}Boo!{{/gt}}</span>';
                 template = Handlebars.compile(source);
@@ -411,19 +394,16 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'gt', 50, 20, {includeElse:true});
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block for inverse", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'gt', 10, 20, {expectInverse:true, includeElse:true});
             });
         });
 
         describe("gt block helper without else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#gt target 10}}Yay!{{/gt}}</span>';
                 template = Handlebars.compile(source);
@@ -441,15 +421,13 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'gt', 50, 20, {includeElse:false});
             });
         });
 
-        /// gte ///
+        // gte
         describe("gte inline helper", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{gte target "10"}}</span>';
                 template = Handlebars.compile(source);
@@ -475,7 +453,6 @@ define([
         });
 
         describe("gte inline helper with incorrect arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{gte target "bobby" ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -495,7 +472,6 @@ define([
         });
 
         describe("gte inline helper with optional arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{gte target 10 ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -530,7 +506,6 @@ define([
         });
 
         describe("gte block helper with else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#gte target "10"}}Yay!{{else}}Boo!{{/gte}}</span>';
                 template = Handlebars.compile(source);
@@ -554,19 +529,16 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                expectContextToBePassedToBlockHelper.call(this, 'gte', 50, 50, {includeElse:true});
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block for inverse", function ()  {
                expectContextToBePassedToBlockHelper.call(this, 'gte', 10, 20, {expectInverse:true, includeElse:true});
             });
         });
 
         describe("gte block helper without else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#gte target 10}}Yay!{{/gte}}</span>';
                 template = Handlebars.compile(source);
@@ -590,7 +562,6 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'gte', 50, 50, {includeElse:false});
             });
@@ -598,7 +569,6 @@ define([
 
         // lt
         describe("lt inline helper", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{lt target "10"}}</span>';
                 template = Handlebars.compile(source);
@@ -618,7 +588,6 @@ define([
         });
 
         describe("lt inline helper with incorrect arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{lt target "bobby" ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -638,7 +607,6 @@ define([
         });
 
         describe("lt inline helper with optional arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{lt target 10 ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -667,7 +635,6 @@ define([
         });
 
         describe("lt block helper with else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#lt target "10"}}Yay!{{else}}Boo!{{/lt}}</span>';
                 template = Handlebars.compile(source);
@@ -685,19 +652,16 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'lt', 20, 50, {includeElse:true});
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block for inverse", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'lt', 20, 10, {expectInverse:true, includeElse:true});
             });
         });
 
         describe("lt block helper without else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#lt target 10}}Yay!{{/lt}}</span>';
                 template = Handlebars.compile(source);
@@ -715,7 +679,6 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block ", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'lt', 20, 50, {includeElse:false});
             });
@@ -723,7 +686,6 @@ define([
 
         // lte
         describe("lte inline helper", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{lte target "10"}}</span>';
                 template = Handlebars.compile(source);
@@ -749,7 +711,6 @@ define([
         });
 
         describe("lte inline helper with incorrect arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{lte target "bobby" ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -769,7 +730,6 @@ define([
         });
 
         describe("lte inline helper with optional arguments", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{lte target 10 ifTrue="Yay!" ifFalse="Boo!"}}</span>';
                 template = Handlebars.compile(source);
@@ -797,6 +757,7 @@ define([
                 expect(template({ target:[1, 2, 3, 4, 5] })).toEqual('<span>Yay!</span>');
                 expect(template({ target:[1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1] })).toEqual('<span>Boo!</span>');
             });
+
             it("expect an object to return the correct output", function () {
                 expect(template({ target:{ one:1, two:2, three:3} })).toEqual('<span>Yay!</span>');
                 expect(template({ target:{ one:1, two:2, three:3, four:4, five:5, six:6, seven:7, eight:8, nine:9, ten:10, eleven:11} })).toEqual('<span>Boo!</span>');
@@ -804,7 +765,6 @@ define([
         });
 
         describe("lte block helper with else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#lte target "10"}}Yay!{{else}}Boo!{{/lte}}</span>';
                 template = Handlebars.compile(source);
@@ -828,19 +788,16 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'lte', 20, 20, {includeElse:true});
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'lte', 50, 20, {includeElse:true, expectInverse:true});
             });
         });
 
         describe("lte block helper without else functionality", function () {
-            var source, template;
             beforeEach(function () {
                 source = '<span>{{#lte target 10}}Yay!{{/lte}}</span>';
                 template = Handlebars.compile(source);
@@ -864,7 +821,6 @@ define([
                 expect(template(context)).toEqual(expected);
             });
 
-            // The beforeEach variables are having to be re-defined (code-smell)
             it("expect the context is passed on into the block", function ()  {
                 expectContextToBePassedToBlockHelper.call(this, 'lte', 10, 20, {includeElse:false});
             });
