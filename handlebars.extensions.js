@@ -3,7 +3,7 @@ define(['underscore.module', 'handlebars'], function (_) {
 
     if (module === void 0) {
         // https://github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js
-        throw "Missing Dependency: Handlebars v1.0 Beta 6";
+        throw "Missing Dependency: Handlebars v1.0 RC 1";
     }
 
     if (_ === void 0) {
