@@ -14,8 +14,10 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'tests/*.spec.js',
-      'src/*.js'
+      'bower_components/handlebars/handlebars.js',
+      'bower_components/lodash/lodash.js',
+      'src/*.js',
+      'tests/*.spec.js'
     ],
 
 
@@ -55,7 +57,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['Chrome', 'PhantomJS'],
 
 
     // If browser does not capture in given timeout [ms], kill it
