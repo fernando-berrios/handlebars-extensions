@@ -1,0 +1,29 @@
+{
+  "name": "handlebars-extensions",
+  "version": "1.1.0",
+  "description": "Comprehensive collection of commonly needed Handlebars.js helpers and extensions. Consider it an unofficial handlebars-contrib of sorts.",
+  "main": "handlebars.extensions.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prototypef/handlebars-extensions.git"
+  },
+  "author": "Fernando Berrios <fberrios@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/prototypef/handlebars-extensions/issues"
+  },
+  "devDependencies": {
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-script-launcher": "~0.1.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-html2js-preprocessor": "~0.1.0",
+    "karma-requirejs": "~0.1.0",
+    "karma-jasmine": "~0.1.3",
+    "karma-coffee-preprocessor": "~0.1.0",
+    "karma-phantomjs-launcher": "~0.1.0",
+    "karma": "~0.10.2"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "handlebars-extensions",
+  "version": "1.1.0",
+  "description": "Comprehensive collection of commonly needed Handlebars.js helpers and extensions. Consider it an unofficial handlebars-contrib of sorts.",
+  "homepage": "https://github.com/prototypef/handlebars-extensions",
+  "authors": [
+    "Fernando Berrios <fberrios@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "handlebars": "~1.0.0",
+    "lodash": "~1.3.1"
+  },
+  "devDependencies": {
+    "jasmine": "~1.3.1"
+  }
+}
