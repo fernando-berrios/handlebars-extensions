@@ -9,11 +9,12 @@
     return (_.include(keys, 'inverse') && _.include(keys, 'fn'));
   }
 
+  // IMPORTANT: Only use with call(), apply() or bind()
   function genericDualHelper(options, func) {
-    var output, hash = options.hash, hashKeys = _.keys(hash);
-
-    var ifFalse = isBlockHelper(options) ? options.inverse(this) : (_.include(hashKeys, 'ifFalse') ? hash.ifFalse : '');
-    var ifTrue = isBlockHelper(options) ? options.fn(this) : (_.include(hashKeys, 'ifTrue') ? hash.ifTrue : '');
+    /*jshint validthis:true */
+    var output, hash = options.hash, hashKeys = _.keys(hash),
+      ifFalse = isBlockHelper(options) ? options.inverse(this) : (_.include(hashKeys, 'ifFalse') ? hash.ifFalse : ''),
+      ifTrue = isBlockHelper(options) ? options.fn(this) : (_.include(hashKeys, 'ifTrue') ? hash.ifTrue : '');
 
     output = func.call(this) ? ifTrue : ifFalse;
 
@@ -103,7 +104,7 @@
     options.fn = inverse;
     options.inverse = fn;
 
-    return Handlebars.helpers['eq'].call(this, context, options);
+    return Handlebars.helpers.eq.call(this, context, options);
   });
 
   /**
@@ -175,7 +176,7 @@
     options.fn = inverse;
     options.inverse = fn;
 
-    return Handlebars.helpers['has'].call(this, context, options);
+    return Handlebars.helpers.has.call(this, context, options);
   });
 
   /**

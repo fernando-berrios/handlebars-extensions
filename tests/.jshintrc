@@ -1,0 +1,11 @@
+{
+  // Documentation: http://www.jshint.com/docs/
+  "globals": {
+    "Handlebars": false,
+    "_": false,
+    "beforeEach": false,
+    "describe": false,
+    "expect": false,
+    "it": false
+  }
+}
