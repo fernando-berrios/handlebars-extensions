@@ -2,7 +2,7 @@
 
 ## Overview
 
-The goal of this project is to develop a comprehensive, well documented and unit tested collection of commonly needed Handlebars.js helpers and extensions.
+The goal of this project is to develop a comprehensive, well documented and unit tested collection of commonly needed Handlebars.js helpers and extensions. Where possible, helpers will support both inline and block mode (read: inline if (iif) vs if/else blocks) which gives you greater flexibility when writing and structuring your templates.
 
 ### Dependencies
 
@@ -11,7 +11,7 @@ The goal of this project is to develop a comprehensive, well documented and unit
 
 ### Develpment Dependencies
 
-A few notes if you are interested in contributing to the project or if you are just curious. Unit tests are written with the [Jasmine](http://pivotal.github.com/jasmine/) framework (and it's lovely BDD style syntax) and the project is configured to use the [Karma](http://karma-runner.github.io/) test runner to um... run them. Check out the *.spec.js files inside of the tests folder for more info.
+A few notes if you are interested in contributing to the project or if you are just curious. Unit tests are written with the [Jasmine](http://pivotal.github.com/jasmine/) framework (and its lovely BDD style syntax) and the project is configured to use the [Karma](http://karma-runner.github.io/) test runner to um... run them. Check out the *.spec.js files inside of the tests folder for more info.
 
 To get started developing, clone the git repo to your local workspace and run:
 
