@@ -4,11 +4,11 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Handlebars Extensions Module : A collection of useful Handlebars.js helpers and extensions. Bundled into a RequireJS module, and unit tested using the Jasmine BDD framework." />
+    <meta name="description" content="Handlebars Extensions : A comprehensive, well documented and unit tested collection of commonly needed Handlebars.js helpers and extensions. Consider it an unofficial handlebars-contrib of sorts." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-    <title>Handlebars Extensions Module</title>
+    <title>Handlebars Extensions</title>
   </head>
 
   <body>
@@ -16,14 +16,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <a id="forkme_banner" href="https://github.com/prototypef/handlebars-extensions-module">View on GitHub</a>
+          <a id="forkme_banner" href="https://github.com/prototypef/handlebars-extensions">View on GitHub</a>
 
-          <h1 id="project_title">Handlebars Extensions Module</h1>
-          <h2 id="project_tagline">A collection of useful Handlebars.js helpers and extensions. Bundled into a RequireJS module, and unit tested using the Jasmine BDD framework.</h2>
+          <h1 id="project_title">Handlebars Extensions</h1>
+          <h2 id="project_tagline">A comprehensive, well documented and unit tested collection of commonly needed Handlebars.js helpers and extensions. Consider it an unofficial handlebars-contrib of sorts.</h2>
 
             <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/prototypef/handlebars-extensions-module/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/prototypef/handlebars-extensions-module/tarball/master">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" href="https://github.com/prototypef/handlebars-extensions/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/prototypef/handlebars-extensions/tarball/master">Download this project as a tar.gz file</a>
             </section>
         </header>
     </div>
@@ -31,211 +31,65 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>Handlebars Extensions Module</h1>
+        <h1>
+<a name="handlebars-extensions" class="anchor" href="#handlebars-extensions"><span class="octicon octicon-link"></span></a>Handlebars Extensions</h1>
 
-<h2>Overview</h2>
+<h2>
+<a name="overview" class="anchor" href="#overview"><span class="octicon octicon-link"></span></a>Overview</h2>
 
-<p>The goal of this project is to develop a comprehensive, well documented and unit tested set of Handlebars.js helpers and extensions, conveniently packaged into an AMD module. Unit testing is powered by the <a href="http://pivotal.github.com/jasmine/">Jasmine BDD</a> framework and uses the <a href="http://requirejs.org/">RequireJS</a> AMD module format.</p>
+<p>The goal of this project is to develop a comprehensive, well documented and unit tested collection of commonly needed Handlebars.js helpers and extensions. Where possible, helpers will support both inline and block mode (read: inline if (iif) vs if/else blocks) which gives you greater flexibility when writing and structuring your templates.</p>
 
-<h3>Dependencies</h3>
+<h3>
+<a name="dependencies" class="anchor" href="#dependencies"><span class="octicon octicon-link"></span></a>Dependencies</h3>
 
-<h2>Usage &amp; Examples</h2>
+<ul>
+<li>
+<a href="http://handlebarsjs.com">Handlerbars.js</a> v1.0.0</li>
+<li>
+<a href="http://lodash.com/">Lo-Dash</a> v1.3.1</li>
+</ul><h3>
+<a name="develpment-dependencies" class="anchor" href="#develpment-dependencies"><span class="octicon octicon-link"></span></a>Develpment Dependencies</h3>
 
-<p>Check out the <em>*.spec.js</em> files under the <em>/test/specs/</em> folder to see different use cases and examples. For more in-depth explanation of the module's methods <a href="http://en.wikipedia.org/wiki/RTFM">RTFM</a> (see Documentation section below :P).</p>
+<p>A few notes if you are interested in contributing to the project or if you are just curious. Unit tests are written with the <a href="http://pivotal.github.com/jasmine/">Jasmine</a> framework (and its lovely BDD style syntax) and the project is configured to use the <a href="http://karma-runner.github.io/">Karma</a> test runner to um... run them. Check out the *.spec.js files inside of the tests folder for more info.</p>
 
-<h2>Documentation</h2>
+<p>To get started developing, clone the git repo to your local workspace and run:</p>
 
-<p><strong>toString</strong></p>
-
-<p>Inline helper to convert and ensure that a string is always returned.</p>
-
-<p>Examples</p>
-
-<pre><code>&lt;span&gt;{{toString context}}&lt;/span&gt;
-&lt;span&gt;{{toString context replaceWith="I am a banana!"}}&lt;/span&gt;
+<pre><code>bower install
 </code></pre>
 
-<p><strong>eq</strong></p>
+<p>followed by:</p>
 
-<p>General purpose equality helper. Provides both block and inline helper functionality.</p>
-
-<p>If <em>context</em> equals <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<p>Examples</p>
-
-<pre><code>&lt;!-- Inline mode --&gt;
-&lt;span&gt;{{eq context "compareObject"}}&lt;/span&gt;&lt;!-- Outputs true or false --&gt;
-&lt;span&gt;{{eq context "compareObject" ifTrue="Yay!" ifFalse="Boo!}}&lt;/span&gt;
-
-&lt;!-- Block mode --&gt;
-&lt;select&gt;
-{{#eq context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{/eq}}
-&lt;/select&gt;
-
-&lt;select&gt;
-{{#eq context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{else}}
-&lt;option&gt;Boo!&lt;/option&gt;
-{{/eq}}
-&lt;/select&gt;
+<pre><code>npm install
 </code></pre>
 
-<p><strong>notEq</strong></p>
+<h2>
+<a name="documentation" class="anchor" href="#documentation"><span class="octicon octicon-link"></span></a>Documentation</h2>
 
-<p>Inverse version of eq helper.</p>
+<p>TODO: Working on how to best show the documentation in this page or in an external link.</p>
 
-<p><strong>has</strong></p>
+<p>Check out the code files in the src folder, each one of the helper methods has a documentation comment which includes a brief description and an example on how to use it.</p>
 
-<p>A "has" helper for Objects and Arrays, checks if <em>context</em> has a property or value that matches the <em>propertyName</em>.<br>Provides both block and inline helper functionality.</p>
+<h2>
+<a name="changelog" class="anchor" href="#changelog"><span class="octicon octicon-link"></span></a>Changelog</h2>
 
-<p>If the <em>context</em> is an Object and it contains a property named <em>propertyName</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
+<p>v1.0.0</p>
 
-<p>If the <em>context</em> is an Array and it has a value equal to <em>propertyName</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
+<ul>
+<li>Initial project load</li>
+</ul><p>v1.0.1</p>
 
-<pre><code>&lt;!-- Inline mode --&gt;
-&lt;span&gt;{{has context "propertyName" ifTrue="Yay!"}}&lt;/span&gt;
-&lt;span&gt;{{has context "propertyName" ifTrue="Yay!" ifFalse="Boo!}}&lt;/span&gt;
+<ul>
+<li>Merged pull request that fixed context passing to block helper</li>
+</ul><p>v.1.1.0</p>
 
-&lt;!-- Block mode --&gt;
-&lt;select&gt;
-{{#has context "propertyName"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{/has}}
-&lt;/select&gt;
+<ul>
+<li>Minor project renaming</li>
+<li>Refactored to remove use of RequireJS module format, I figured that if you really need to convert this to an AMD module you can create a simple shim to include in your project</li>
+<li>Changed from the Jasmine HTML test runner to using Karma</li>
+</ul><h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
 
-&lt;select&gt;
-{{#has context "propertyName"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{else}}
-&lt;option&gt;Boo!&lt;/option&gt;
-{{/has}}
-&lt;/select&gt;
-</code></pre>
-
-<p><strong>notHas</strong></p>
-
-<p>Inverse version of has helper.</p>
-
-<p><strong>gt</strong></p>
-
-<p>Greater than inequality helper (a.k.a &gt;, More than). Provides both block and inline helper functionality.</p>
-
-<p>If the <em>context</em> is a Number and greater than <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<p>If the <em>context</em> is a String, Object or Array and its length is greater than <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<pre><code>&lt;!-- Inline mode --&gt;
-&lt;span&gt;{{gt context "compareObject" ifTrue="Yay!" }}&lt;/span&gt;
-&lt;span&gt;{{gt context "compareObject" ifTrue="Yay!" ifFalse="Boo!}}&lt;/span&gt;
-
-&lt;!-- Block mode --&gt;
-&lt;select&gt;
-{{#gt context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{/gt}}
-&lt;/select&gt;
-
-&lt;select&gt;
-{{#gt context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{else}}
-&lt;option&gt;Boo!&lt;/option&gt;
-{{/gt}}
-&lt;/select&gt;
-</code></pre>
-
-<p><strong>gte</strong></p>
-
-<p>Greater than or equal inequality helper (a.k.a &gt;=, More than or equal). Provides both block and inline helper functionality.</p>
-
-<p>If the <em>context</em> is a Number and greater than or equal to <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<p>If the <em>context</em> is a String, Object or Array and its length is greater than or equal to <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<pre><code>&lt;!-- Inline mode --&gt;
-&lt;span&gt;{{gte context "compareObject" ifTrue="Yay!" }}&lt;/span&gt;
-&lt;span&gt;{{gte context "compareObject" ifTrue="Yay!" ifFalse="Boo!}}&lt;/span&gt;
-
-&lt;!-- Block mode --&gt;
-&lt;select&gt;
-{{#gte context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{/gte}}
-&lt;/select&gt;
-
-&lt;select&gt;
-{{#gte context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{else}}
-&lt;option&gt;Boo!&lt;/option&gt;
-{{/gte}}
-&lt;/select&gt;
-</code></pre>
-
-<p><strong>lt</strong></p>
-
-<p>Less than inequality helper (a.k.a &lt;). Provides both block and inline helper functionality.</p>
-
-<p>If the <em>context</em> is a Number and less than <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<p>If the <em>context</em> is a String, Object or Array and its length is less than <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<pre><code>&lt;!-- Inline mode --&gt;
-&lt;span&gt;{{lt context "compareObject" ifTrue="Yay!" }}&lt;/span&gt;
-&lt;span&gt;{{lt context "compareObject" ifTrue="Yay!" ifFalse="Boo!}}&lt;/span&gt;
-
-&lt;!-- Block mode --&gt;
-&lt;select&gt;
-{{#lt context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{/lt}}
-&lt;/select&gt;
-
-&lt;select&gt;
-{{#lt context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{else}}
-&lt;option&gt;Boo!&lt;/option&gt;
-{{/lt}}
-&lt;/select&gt;
-</code></pre>
-
-<p><strong>lte</strong></p>
-
-<p>Less than or equal inequality helper (a.k.a &lt;). Provides both block and inline helper functionality.</p>
-
-<p>If the <em>context</em> is a Number and less than or equal to <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<p>If the <em>context</em> is a String, Object or Array and its length is less than or equal to <em>compareObject</em>, in Inline mode returns <em>ifTrue</em>, otherwise returns<br><em>ifFalse</em>; in Block mode returns content in first block, otherwise returns content after {{else}} block (if defined).</p>
-
-<pre><code>&lt;!-- Inline mode --&gt;
-&lt;span&gt;{{lte context "compareObject" ifTrue="Yay!" }}&lt;/span&gt;
-&lt;span&gt;{{lte context "compareObject" ifTrue="Yay!" ifFalse="Boo!}}&lt;/span&gt;
-
-&lt;!-- Block mode --&gt;
-&lt;select&gt;
-{{#lte context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{/lte}}
-&lt;/select&gt;
-
-&lt;select&gt;
-{{#lte context "compareObject"}}
-&lt;option&gt;Yay!&lt;/option&gt;
-{{else}}
-&lt;option&gt;Boo!&lt;/option&gt;
-{{/lte}}
-&lt;/select&gt;
-</code></pre>
-
-<h2>Change Log</h2>
-
-<p>Nothing to see here yet. Move along.</p>
-
-<h2>License</h2>
+<p>The MIT License (MIT)</p>
 
 <p>Copyright (c) 2012 Fernando Berrios</p>
 
@@ -250,7 +104,7 @@
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Handlebars Extensions Module maintained by <a href="https://github.com/prototypef">prototypef</a></p>
+        <p class="copyright">Handlebars Extensions maintained by <a href="https://github.com/prototypef">prototypef</a></p>
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
       </footer>
     </div>
