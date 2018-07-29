@@ -11,7 +11,7 @@ The goal of this project is to develop a comprehensive, well documented and unit
 
 ### Develpment Dependencies
 
-A few notes if you are interested in contributing to the project or if you are just curious. Unit tests are written with the [Jasmine](http://pivotal.github.com/jasmine/) framework (and its lovely BDD style syntax) and the project is configured to use the [Karma](http://karma-runner.github.io/) test runner to um... run them. Check out the *.spec.js files inside of the tests folder for more info.
+A few notes if you are interested in contributing to the project or if you are just curious. Unit tests are written with the [Jasmine](https://jasmine.github.io/) framework (and its lovely BDD style syntax) and the project is configured to use the [Karma](http://karma-runner.github.io/) test runner to um... run them. Check out the *.spec.js files inside of the tests folder for more info.
 
 To get started developing, clone the git repo to your local workspace and run:
 
